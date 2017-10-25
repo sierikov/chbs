@@ -321,14 +321,13 @@ function CorrectHorseBatteryStaple() {
 	 * Bind all UI related events
 	 */
 	this.bindEvents = function() {
-		var clickEvent = !!("ontouchstart" in window) ? "touchend" : "click";
 
 		//Update options when UI is updated
 		$("[data-option]").on("keyup change", function() {
 			self.setOptionFromUI(this);
 		});
 
-		this.ui.$btnGenerate.on(clickEvent + " keypress", function() {
+		this.ui.$btnGenerate.on("click keypress", function() {
 			self.generate();
 		});
 
