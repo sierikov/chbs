@@ -366,7 +366,7 @@ function CorrectHorseBatteryStaple() {
 
 
 		$(".fieldset")
-			.on(clickEvent, "legend", function() {
+			.on('click', "legend", function() {
 			$(this).closest(".fieldset").toggleClass("active");
 		});
 
