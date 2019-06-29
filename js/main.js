@@ -311,7 +311,7 @@ function CorrectHorseBatteryStaple() {
         console.log(password);
         let score = scorePassword(password);
         this.ui.$strength.width((score > 100 ? 100 : score).toString() + "%");
-        this.ui.$strength_val.text("Strength: " + score + " / 160");
+        this.ui.$strength_val.text("Strength: " + score + " / 235");
         this.ui.$length.text("Length: " + (password.length) + " letters");
         return 0;
     };
@@ -423,7 +423,7 @@ function scorePassword(pass) {
     }
     score += (variationCount - 1) * 10;
 
-    return score;
+    return score.toFixed(5);
 }
 
 

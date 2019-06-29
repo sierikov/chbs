@@ -25,7 +25,7 @@
 			<div class="main-content-container container-fluid px-4">
 				<!-- Page Header -->
 				<div class="page-header row no-gutters py-4 mb-3 mt-5">
-					<div class="col-8 col-sm-4 text-center text-sm-left mb-0">
+					<div class="col-8 col-sm-4 text-sm-left mb-0">
 						<span class="text-uppercase page-subtitle">C.H.B.S.</span>
 						<h3 class="page-title">Correct Horse Battery Stample</h3>
 					</div>
@@ -56,12 +56,14 @@
 												<div class="form-group">
 													<div class="input-group mb-3">
 														<label class="col-form-label pr-3">Separator</label>
-														<input type="text" class="form-control" placeholder="default -" aria-label="separator"
-														       aria-describedby="basic-addon1">
+														<input type="text" class="form-control" placeholder="is NONE"
+														       aria-label="separator"
+														       value="-"
+														       aria-describedby="basic-addon1" id="separator" data-option="separator">
 													</div>
 													<div class="input-group mb-3 ">
 														<label class="col-form-label pr-2">Min. words</label>
-														<select class="form-control col-md-2">
+														<select id="min-words" data-option="minWords" class="form-control col-md-2">
 															<option>2</option>
 															<option>3</option>
 															<option selected>4</option>
@@ -69,11 +71,9 @@
 															<option>6</option>
 															<option>7</option>
 															<option>8</option>
-															<option>9</option>
-															<option>10</option>
 														</select>
 														<label class="col-form-label pl-3 pr-2">Min. Length</label>
-														<select class="form-control col-md-2 col-xs-2">
+														<select id="min-length" data-option="minLength"class="form-control col-md-2 col-xs-2">
 															<option>10</option>
 															<option>15</option>
 															<option selected>20</option>
@@ -91,21 +91,23 @@
 											<fieldset class="">
 												<strong class="text-muted d-block mb-1">Mods</strong>
 												<div class="custom-control custom-toggle custom-toggle-sm mb-1">
-													<input type="checkbox" id="customToggle1" name="customToggle1" class="custom-control-input">
-													<label class="custom-control-label" for="customToggle1">Make First Letter Uppercase</label>
+													<input type="checkbox" checked="checked"
+													       data-option="firstUpper" id="first-upper"
+													       name="customToggle1" class="custom-control-input">
+													<label class="custom-control-label" for="first-upper">Make First Letter Uppercase</label>
 												</div>
 												<div class="custom-control custom-toggle custom-toggle-sm mb-1">
-													<input type="checkbox" id="customToggle2" name="customToggle2" class="custom-control-input">
-													<label class="custom-control-label" for="customToggle2">Append random number</label>
+													<input type="checkbox" id="appendNumbers" name="customToggle2" data-option="appendNumbers"class="custom-control-input">
+													<label class="custom-control-label" for="appendNumbers" >Append random number</label>
 												</div>
 												<div class="custom-control custom-toggle custom-toggle-sm mb-1">
-													<input type="checkbox" id="customToggle3" name="customToggle3" class="custom-control-input">
-													<label class="custom-control-label" for="customToggle3">Save session settings</label>
+													<input type="checkbox" data-option="saveOptions" id="save-options" name="customToggle3" class="custom-control-input">
+													<label class="custom-control-label" for="save-options">Save session settings</label>
 												</div>
 											</fieldset>
 											<!-- / Toggles -->
 										</div>
-										<button type="button" class="ml-3 mt-2 mb-3 btn btn-outline-primary mr-2">Generate</button>
+										<button id="btn-generate" type="button" class="ml-3 mt-2 mb-3 btn btn-outline-primary mr-2">Generate</button>
 									</div>
 								</li>
 							</ul>
@@ -150,7 +152,7 @@
 									</div>
 									<div class="mb-0">
 										<strong class="text-muted d-block mb-0">Social & Source</strong>
-										<p class="mb-3">Built and maintained by ArtemSer (on Github). Forked from JVDL.</p>
+										<p class="mb-3">Built and maintained by <a href="https://github.com/ArtemSer">ArtemSer </a> (on Github). Forked from JVDL.</p>
 										<div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
 											<label class="btn btn-white">
 												<input type="radio" name="options" id="option1" autocomplete="off"> Twitter </label>
