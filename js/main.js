@@ -442,12 +442,25 @@ function copyToClipboard(element) {
 }
 
 function displayBg() {
-    $.getJSON("https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US", function (data) {
-        console.log(data);// intialize list
-
-
-        /* hide spinner and then output HTML we built in the for loop */
-        $(".spinner").hide();
+    $.ajax({
+        type: 'GET',
+        url: "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US",
+        contentType: 'application/json; charset=utf-8',
+        dataType:'json',
+        responseType:'application/json',
+        xhrFields: { withCredentials: false },
+        headers: {
+            'Access-Control-Allow-Credentials' : true,
+            'Access-Control-Allow-Origin':'https://www.bing.com/',
+            'Access-Control-Allow-Methods':'GET',
+            'Access-Control-Allow-Headers':'application/*'
+        },
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(error) {
+            console.log(error);
+        }
     });
 
 }
