@@ -3,7 +3,7 @@
  * Correct Horse!
  *
  * @author John Van Der Loo, Sierikov Artem
- * @version 1.2
+ * @version 2.0
  * @license MIT
  *
  * @returns    {CorrectHorseBatteryStaple}
@@ -12,7 +12,7 @@
 function CorrectHorseBatteryStaple() {
     "use strict";
 
-    var self = this;
+    const self = this;
 
     /**
      * Application configuration
@@ -24,10 +24,8 @@ function CorrectHorseBatteryStaple() {
     };
 
     this.data = [];
-
-    this.dataSets = {};
-
     this.words = [];
+    this.dataSets = {};
 
     /**
      * UI references
@@ -105,14 +103,14 @@ function CorrectHorseBatteryStaple() {
      * @param    {string}    value
      */
     this.setUIOption = function (key, value) {
-        var $el = $("[data-option='" + key + "']");
+        let element = $("[data-option='" + key + "']");
 
-        if ($el.is("input[type=checkbox]")) {
-            $el.prop("checked", value);
+        if (element.is("input[type=checkbox]")) {
+            element.prop("checked", value);
             return;
         }
 
-        $el.val(value);
+        element.val(value);
 
     };
 
@@ -132,17 +130,17 @@ function CorrectHorseBatteryStaple() {
     /**
      * Set a config option from the UI
      *
-     * @param {HTMLElement} el
+     * @param {HTMLElement} htmlElement
      */
-    this.setOptionFromUI = function (el) {
-        var $el = $(el),
-            val = $el.val();
+    this.setOptionFromUI = function (htmlElement) {
+        let element = $(htmlElement),
+            val = element.val();
 
-        if ($el.is("[type=checkbox]")) {
-            val = $el.prop("checked");
+        if (element.is("[type=checkbox]")) {
+            val = element.prop("checked");
         }
 
-        self.setOption($el.data("option"), val);
+        self.setOption(element.data("option"), val);
     };
 
 
@@ -172,18 +170,18 @@ function CorrectHorseBatteryStaple() {
 
 
     /**
-     * Retrieve a number of random words from our dataset
+     * Retrieve a number of random words from our set of Data
      *
-     * @param {number} n Number of words to get
+     * @param {number} amount Number of words to get
      *
      * @returns {Array}  The array of words
      */
-    this.getRandomWords = function (n) {
-        var len = this.data.length,
+    this.getRandomWords = function (amount) {
+        let len = this.data.length,
             rand = Math.floor(Math.random() * len),
             i, word;
 
-        for (i = 0; i < n; i++) {
+        for (i = 0; i < amount; i++) {
             word = this.data[rand];
             word = this.options.firstUpper ? word.charAt(0).toUpperCase() + word.slice(1) : word;
             this.words.push(word);
@@ -213,12 +211,12 @@ function CorrectHorseBatteryStaple() {
 
 
     /**
-     * Get words from the wordlist
+     * Get words from the dictionary
      *
      * @param    {number}    [numWords]    Number of words to get
      */
     this.getWords = function (numWords) {
-        var fullword;
+        let fullword;
 
         if (numWords === undefined) { numWords = this.options.minWords; }
 
@@ -430,7 +428,7 @@ function scorePassword(pass) {
 /*
  This software is licensed under the MIT License:
 
- Copyright (c) 2013, John Van Der Loo
+ Copyright (c) 2019, John Van Der Loo, Sierikov Artem
 
  Permission is hereby granted, free of charge, to any person obtaining a copy of this
  software and associated documentation files (the "Software"), to deal in the Software
