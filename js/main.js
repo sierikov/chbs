@@ -442,27 +442,20 @@ function copyToClipboard(element) {
 }
 
 function displayBg() {
-    $.ajax({
-        type: 'GET',
-        url: "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US",
-        contentType: 'application/json; charset=utf-8',
-        dataType:'json',
-        responseType:'application/json',
-        xhrFields: { withCredentials: false },
-        headers: {
-            'Access-Control-Allow-Credentials' : true,
-            'Access-Control-Allow-Origin':'https://www.bing.com/',
-            'Access-Control-Allow-Methods':'GET',
-            'Access-Control-Allow-Headers':'application/*'
-        },
-        success: function(data) {
-            console.log(data);
-        },
-        error: function(error) {
-            console.log(error);
-        }
+    $("img.loader").css("display", "block");
+    $('<img/>').attr('src', 'https://source.unsplash.com/1376x1080/?clouds,snow,sky/').on('load', function() {
+        sleep(100);
+        $(this).remove(); // prevent memory leaks
+        $('body').css('background-image', 'url(https://source.unsplash.com/1376x1080/?clouds,snow,sky/)');
+        $("img.loader").css("display", "none");
     });
+}
 
+
+function hideBg() {
+    $("img.loader").css("display", "none");
+    $("body").css("background-image", "none");
+    $("body").css("background-color", "#fff");
 }
 
 

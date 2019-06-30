@@ -609,6 +609,11 @@ form label:hover {
 .fr {
   float: right;
 }
+.loader {
+  width: 20px;
+  margin-left: 10px;
+  display: none;
+}
 @media (max-width: 576px) {
   html {
     font-size: 15px;
