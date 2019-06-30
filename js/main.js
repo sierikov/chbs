@@ -444,7 +444,6 @@ function copyToClipboard(element) {
 function displayBg() {
     $("img.loader").css("display", "block");
     $('<img/>').attr('src', 'https://source.unsplash.com/1376x1080/?clouds,snow,sky/').on('load', function() {
-        sleep(100);
         $(this).remove(); // prevent memory leaks
         $('body').css('background-image', 'url(https://source.unsplash.com/1376x1080/?clouds,snow,sky/)');
         $("img.loader").css("display", "none");
