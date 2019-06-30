@@ -50,7 +50,7 @@
 											<input id="txt" type="text" class="form-control" placeholder="Password" aria-label="Password"
 											       aria-describedby="basic-addon1">
 										</div>
-										<div class="col-sm-12 col-md-7 mb-2 mt-3">
+										<div class="col-sm-12 col-md-6 mb-2 mt-3">
 											<strong class="text-muted d-block mb-2">Settings</strong>
 											<form>
 												<div class="form-group">
@@ -61,7 +61,7 @@
 														       value="-"
 														       aria-describedby="basic-addon1" id="separator" data-option="separator">
 													</div>
-													<div class="input-group fl mb-3 pl-0 pr-0 mr-4 col-md-4">
+													<div class="input-group fl mb-3 pl-0 pr-0 mr-3 col-md-4">
 														<label for="min-words" class="col-form-label pr-2">Min. words</label>
 														<select id="min-words" data-option="minWords" class="form-control">
 															<option>2</option>
@@ -88,7 +88,7 @@
 												</div>
 											</form>
 										</div>
-										<div class="col-sm-12 col-md-5 mb-2 mt-3">
+										<div class="col-sm-12 col-md-6 mb-2 mt-3">
 											<!-- Toggles -->
 											<fieldset class="">
 												<strong class="text-muted d-block mb-1">Mods</strong>
@@ -99,8 +99,12 @@
 													<label class="custom-control-label" for="first-upper">First Letter Uppercase</label>
 												</div>
 												<div class="custom-control custom-toggle custom-toggle-sm mb-1">
-													<input type="checkbox" id="appendNumbers" name="customToggle2" data-option="appendNumbers"class="custom-control-input">
+													<input type="checkbox" id="appendNumbers" name="customToggle2" data-option="appendNumbers" class="custom-control-input">
 													<label class="custom-control-label" for="appendNumbers" >Append random number</label>
+												</div>
+												<div class="custom-control custom-toggle custom-toggle-sm mb-1">
+													<input type="checkbox" id="bg" name="customToggle2" data-option="bg" class="custom-control-input">
+													<label class="custom-control-label" for="bg" >Back of the day</label>
 												</div>
 												<div class="custom-control custom-toggle custom-toggle-sm mb-1">
 													<input type="checkbox" data-option="saveOptions" id="save-options" name="customToggle3" class="custom-control-input">
@@ -156,12 +160,9 @@
 										<strong class="text-muted d-block mb-0">Social & Source</strong>
 										<p class="mb-3">Built and maintained by <a href="https://github.com/ArtemSer">ArtemSer </a> (on Github). Forked from JVDL.</p>
 										<div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
-											<label class="btn btn-white">
-												<input type="radio" name="options" id="option1" autocomplete="off"> Twitter </label>
-											<label class="btn btn-white">
-												<input type="radio" name="options" id="option3" autocomplete="off"> LinkedIn </label>
-											<label class="btn btn-white">
-												<input type="radio" name="options" id="option4" autocomplete="off"> GitHub </label>
+											<label class="btn btn-white"> Twitter </label>
+											<label class="btn btn-white"> LinkedIn </label>
+											<label class="btn btn-white"> GitHub </label>
 										</div>
 									</div>
 									<!-- / Progress Bars -->

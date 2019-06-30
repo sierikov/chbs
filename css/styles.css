@@ -234,8 +234,9 @@ select.form-control:not([size]):not([multiple]) {
   /* width: 100%; */
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: 7px 7px 7px 13px;
-  /* width: 100%; */
+  padding: 7px 7px 7px 7px;
+  width: auto;
+  max-width: 40px;
 }
 select.form-control:focus::-ms-value {
   color: #495057;
@@ -318,6 +319,7 @@ form label:hover {
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn {
   border-top-right-radius: 0;
+  /* font-size: 11px; */
   border-bottom-right-radius: 0;
 }
 .btn-group > .btn:not(:first-child),
@@ -613,6 +615,13 @@ form label:hover {
   }
   .input-group-text {
     font-size: 10px;
+  }
+  select.form-control:not([size]):not([multiple]) {
+    height: calc(2.09375rem + 2px);
+    /* width: 100%; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 7px 7px 7px 13px;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
