@@ -6,7 +6,6 @@
  * License: MIT
  */
 
-
 /* TODO: CLEAN UP UNNEDED STUFF   */
 
 :root {
@@ -254,7 +253,6 @@ i.material-icons {
 	border-bottom-left-radius: 0;
 }
 
-
 .input-group > .form-control:not(:last-child), .input-group > .custom-select:not(:last-child) {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
@@ -359,7 +357,6 @@ i.material-icons {
 	height: 1.125rem;
 	background-size: 50% 50%;
 }
-
 
 .custom-toggle {
 	position: relative;
@@ -548,7 +545,6 @@ i.material-icons {
 .border {
 	border: 1px solid #e1e5eb !important;
 }
-
 
 /* Shards Dashboards Lite Styles */
 html {

@@ -1,0 +1,67 @@
+@import "inputs";
+
+.form-control {
+  height: auto;
+  padding: 0.4375rem 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #e1e5eb;
+  font-weight: 300;
+  will-change: border-color, box-shadow;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  transition: box-shadow 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06), border 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
+}
+
+.form-control:hover {
+  border-color: #b3bdcc;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0.313rem 0.719rem rgba(0, 123, 255, 0.1), 0 0.156rem 0.125rem rgba(0, 0, 0, 0.06);
+}
+
+.form-control:focus:hover {
+  border-color: #007bff;
+}
+
+.form-control::placeholder {
+  color: #868e96;
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.09375rem + 2px);
+  /* width: 100%; */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 7px 7px 7px 13px;
+  /* width: 100%; */
+}
+
+select.form-control:focus::-ms-value {
+  color: #495057;
+  background-color: #fff;
+}
+
+select.form-control:hover {
+  cursor: pointer;
+}
+
+form label:hover {
+  cursor: pointer;
+}
+
+.col-form-label {
+  padding-top: calc(0.4375rem + 1px);
+  padding-bottom: calc(0.4375rem + 1px);
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
