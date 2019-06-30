@@ -380,6 +380,7 @@ function CorrectHorseBatteryStaple() {
             $("[data-option]").each(function () {
                 self.setOptionFromUI(this);
             });
+
         }
 
 
@@ -387,6 +388,10 @@ function CorrectHorseBatteryStaple() {
         this.loadData("wordlist.txt", function () {
             self.generate();
         });
+
+        if ($("#bg").prop("checked") === true) {
+            displayBg();
+        }
 
         // Bind Events
         this.bindEvents();
