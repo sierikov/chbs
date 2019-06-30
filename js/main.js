@@ -37,7 +37,9 @@ function CorrectHorseBatteryStaple() {
         $btnGenerate: $("#btn-generate"),
         $strength: $("#strength"),
         $strength_val: $("#strength_val"),
-        $length: $("#length")
+        $length: $("#length"),
+        $copyButton: $("#copy"),
+        $background: $("#body")
     };
 
     /**
@@ -320,9 +322,20 @@ function CorrectHorseBatteryStaple() {
     this.bindEvents = function () {
 
         //Update options when UI is updated
-        $("[data-option]").on(  "keyup change",     function () { self.setOptionFromUI(this);   } );
-        this.ui.$btnGenerate.on("click keypress",   function () { self.generate();              } );
-		this.ui.$passwordBox.on("keyup change",     function () { self.update($(this).val());   } );
+        $("[data-option]").on(  "keyup change",    function () { self.setOptionFromUI(this);   } );
+        this.ui.$btnGenerate.on("click keypress",  function () { self.generate();              } );
+		this.ui.$passwordBox.on("keyup change",    function () { self.update($(this).val());   } );
+		this.ui.$copyButton.on("click keypress",     function () { copyToClipboard(self.ui.$passwordBox)});
+
+        $("#bg").on("change", function () {
+            if ($(this).prop("checked") === true) {
+                displayBg();
+            }
+            // If we no longer wish to save, destroy our LS entry
+            else {
+                hideBg();
+            }
+        });
 
         // Update the saveOptions option
         $("#save-options").on("change", function () {
@@ -380,7 +393,6 @@ function CorrectHorseBatteryStaple() {
     };
 
     this.init();
-
     return this;
 
 }
@@ -422,6 +434,22 @@ function scorePassword(pass) {
     score += (variationCount - 1) * 10;
 
     return score.toFixed(5);
+}
+
+function copyToClipboard(element) {
+    element.select();
+    document.execCommand("Copy");
+}
+
+function displayBg() {
+    $.getJSON("https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US", function (data) {
+        console.log(data);// intialize list
+
+
+        /* hide spinner and then output HTML we built in the for loop */
+        $(".spinner").hide();
+    });
+
 }
 
 

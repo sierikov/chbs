@@ -319,7 +319,6 @@ form label:hover {
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn {
   border-top-right-radius: 0;
-  /* font-size: 11px; */
   border-bottom-right-radius: 0;
 }
 .btn-group > .btn:not(:first-child),
@@ -491,6 +490,7 @@ form label:hover {
 .card {
   background-color: #fff;
   border: none;
+  min-width: 258px;
   border-radius: 0.625rem;
   box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
 }
@@ -628,6 +628,10 @@ form label:hover {
   html {
     font-size: 16px;
     font-weight: 400;
+  }
+  .input-group-text {
+    display: none;
+    overflow: auto;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
