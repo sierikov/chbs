@@ -11,7 +11,6 @@
  */
 function CorrectHorseBatteryStaple() {
     "use strict";
-
     const self = this;
 
     /**
